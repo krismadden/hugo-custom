@@ -1,0 +1,8 @@
+{{ define "main" }}
+    <!-- range is basically the equivalent of a for each loop in javascript -->
+    {{ range .Site.RegularPages }}
+        <!-- dot here not references the individual page currently being looped through -->
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+        <br>
+    {{ end }}
+{{ end }}

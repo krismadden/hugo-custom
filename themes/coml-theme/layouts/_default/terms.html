@@ -1,0 +1,16 @@
+{{ define "main" }}
+
+<!-- setting a variable -->
+{{ $baseurl := .Site.BaseURL }}
+<h1>{{ .Title }}</h1>
+
+<!-- the data variable contains all the information about the taxonomies being use -->
+{{ $plural := .Data.Plural }}
+<!-- key is the name of the tag and value is the number of posts with that tag -->
+{{ range $key, $value := .Data.Terms }}
+    <!-- need to use a variable instead of .Site.BaseURL because at the moment the . now refers to something else  -->
+    <a href="{{ $baseurl }}/{{ $plural }}/{{ $key }}">{{ $key }}</a>
+    <br>
+{{ end }}
+
+{{ end }}

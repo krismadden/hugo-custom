@@ -1,0 +1,18 @@
+baseURL = "/"
+languageCode = "en-us"
+title = "BabyLogger Documentation"
+
+themesDir = "themes"
+theme = "coml-theme"
+
+publishDir = "echolalia-docs-v1"
+
+[taxonomies]
+    tag = "tags"
+    category = "categories"
+
+[markup]
+  [markup.tableOfContents]
+    endLevel = 4
+    ordered = false
+    startLevel = 2

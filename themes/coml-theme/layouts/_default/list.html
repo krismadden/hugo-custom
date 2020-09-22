@@ -1,0 +1,30 @@
+{{ define "main" }}
+<!-- this file displays anything under the sub folder i.e. /post/ -->
+
+<div class="container-fluid p-0" id="content">
+    
+    <div id="left-column">
+        <div class="site-logo-container">
+            <a href="{{ .Site.BaseURL }}"><img id="site-logo" src="{{ .Site.BaseURL }}/images/logo.png" alt="Echolalia Researcher Portal" /></a>
+        </div>
+        {{ range .Site.Pages }}
+        {{ .TableOfContents }}
+        {{ end }}
+    </div>
+
+    <div id="right-column">
+        <h1> 
+           {{ .Title }}
+        </h1>
+
+        {{ range .Site.Pages }}
+            <div class="section">
+                {{ .Content }}
+            </div>
+            <!-- <div class="section-divider-dark"></div> -->
+        {{ end }}
+    </div>
+
+</div>
+
+{{ end }}

@@ -1,0 +1,123 @@
+body{
+    font-family: sofia-pro,Open sans,Arial,Helvetica,sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: jaf-bernina-sans,Varela Round,Arial,Helvetica,sans-serif;
+}
+
+h1, h2{
+    font-weight: 700;
+}
+
+#content, html, body {
+    height: 98%;
+}
+
+#left-column{
+    position: absolute;
+    width: 400px;
+    height: 100%;
+    overflow: scroll;
+    background: #F7F9FE;
+    padding: 30px;
+    .site-logo-container{
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        position: relative;
+        #site-logo{
+            width: 200px;
+            padding-bottom: 10px;
+        }
+    }
+    ul{
+        padding-left: 0px;
+        margin: 0;
+        li{
+            list-style: none;
+        }
+    }
+}
+
+#right-column{
+    scroll-behavior: smooth;
+    position: absolute;
+    right: 0;
+    float: left;
+    width: calc(100% - 400px);
+    height: 100%;
+    overflow: scroll;
+    padding: 30px;
+    .section-divider{
+		width: 100%;
+		height: 2px;
+		margin-top: calc(60px - 16px);
+		margin-bottom: calc(60px - 30px);
+        background: #f7f9fe;
+    }
+    .section-divider-dark{
+		width: 100%;
+		height: 2px;
+		margin-top: calc(60px - 16px);
+		margin-bottom: calc(60px - 30px);
+        background:  	royalblue;
+    }
+}
+
+
+#TableOfContents {
+    // display: block;
+    // padding-left: .5rem;
+    // padding-bottom: 1rem;
+    // font-size: 1rem;
+    color: #1a202c
+}
+
+#TableOfContents li {
+    // padding-top: .25rem;
+    // padding-bottom: .25rem;
+    // list-style: none
+}
+
+
+.active{
+    color: orange !important;
+}
+
+
+#TableOfContents li.active {
+    padding-left: 0
+}
+
+#TableOfContents li.active:before {
+    content: "→";
+    display: inline-block;
+    margin-left: -20px;
+    width: 20px
+}
+
+#TableOfContents ul {
+    margin-left: 1rem!important
+}
+
+#TableOfContents li ul li {
+    margin-left: 1rem
+}
+
+#TableOfContents li.active>a {
+    color: #333;
+    font-weight: 500
+}
+
+#TableOfContents a {
+    text-decoration: none;
+    padding: .125rem 0;
+    color: #a0aec0;
+    -webkit-transition: all 50ms ease-in-out;
+    transition: all 50ms ease-in-out
+}
+
+#TableOfContents a:hover,#TableOfContents a:focus,#TableOfContents a:active {
+    color: #666
+}
