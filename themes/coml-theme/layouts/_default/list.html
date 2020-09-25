@@ -13,16 +13,15 @@
     </div>
 
     <div id="right-column">
-        <h1> 
-           {{ .Title }}
-        </h1>
-
+        <div class="docs-content">
         {{ range .Site.Pages }}
             <div class="section">
                 {{ .Content }}
             </div>
             <!-- <div class="section-divider-dark"></div> -->
         {{ end }}
+        </div>
+        <div class="footer-space"></div>
     </div>
 
 </div>
