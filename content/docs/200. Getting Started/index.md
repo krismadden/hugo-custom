@@ -28,36 +28,12 @@ A phone application has been developed to allow you to synchronize the date and 
   - Now, the LED will switch to <span style="color:red">**RED** </span> only, which means that the Baby Logger has correctly synchronized with your Timezone.
 
 **Note: you should synchronize the time of your logger, right after receiving it, and also every time that it has been powered off for several weeks.**
+Watch this [video](/), for the process
 
 
 ### Environment Installation
 
 This section allows the user to set up the environment for the BabyLogger to work in the best way.
-
-
-<!--more-->
-#### Download the BabyLogger software
-   - Download the BabyLogger's Software Package corresponding to your computer's operating system.
-     - Click [Linux](/images/BabyCloud.zip) .
-     - Click  [MacOs](/images/BabyCloud.zip) .
-     - Click  [Windows](/images/BabyCloud.zip). 
-   - Unzip the downloaded BabyLogger Softawre Package onto the computer . This step will create a **BabyLogger** folder.
-   - Inside this folder, you will see three important folders:  
-  
-      - **Raw_Data** : it will contain the temporary encrypted  data.
-      - **Decrypted_Data** : it will contain the decrypted data
-      - **Scripts** :it contains all the needed scripts.
-      - **Keys**: it will contain the keys to decrypt the data. You have to go [here](http://coml.lscp.ens.fr/babylogger/) and enter the **username** and **code** given on the email to download a **'Keys'** folder, with all the keys generated for your loggers. Please copy this folder into the **'BabyLogger'** folder.
-  
-
-#### Run the provided script to download all the required utilities
- - Open a terminal `Cntrl+Alt+t` and go to the **Scripts** folder and run the script `./softwares` or `sh softwares.sh`.
-The utilities downloaded will be: **SFTP protcole**, **FileZilla (FTP Client)**, **Python3**, **HomeBrew**, **Sox**.
-
-**<p style="color:red">NOTE</p>**
-    Make sure that your computer has the required security protection (antivirus, hard drive encryption, password logins).
-     As your computer will contain sensitive data collected with families, you are responsible for their data protection."
-
 
 
 ### SD Card
@@ -73,68 +49,65 @@ Partition 1 | BL_AUDIO|60.8GB |EXFAT| 64Ko
 Partition 2 | BL_MOTION |3.2GB |FAT32| 32Ko 
 
 #### How to create a partition on a new SD card?
-- **Tutorial**
-  [here](xxx) is a tutorial.
+- You can follow this [tutorial](https://www.youtube.com/watch?v=OZVFvBzQRbs&feature=youtu.be) that we made on windows and it can help you.
+ 
 
-- **OR Follow the steps below**
-  -  Download the SD card image already partitioned [SDCard image](/images/img.zip).
-  - **For MacOS/OS X and Linux**
-
-    1.  Download and Install Etcher from https://etcher.io .
-    2.  Open Etcher and click "Select Image" to choose the image file you already downloaded.
-    <center>![Super wide](/images/sd1.png)</center>
-    3. Choose SD Card as Drive.
-
-    4. Click Flash.
-    5. When the process is completed, eject and insert the SD card into the BabyLogger and power it up.
-- **For Windows**
-
-    1. Download the [Win32](https://sourceforge.net/projects/win32diskimager/) application for flashing the SD card
-    2. Select your device (SD card) 
-        
-        <center>![Super wide](/images/sd2.png)</center>
-    3. Locate the downloaded disk image
-    
-        <center>![Super wide](/images/sd3.png)</center>
-    4. Click Write and wait for the wriing to be completed
-   
-        <center>![Super wide](/images/sd4.png)</center>
-    5. When the process is completed, eject and insert the SD card into the BabyLogger and power it up.
+- Or you can follow this link, that explain this process for each OS:
+    - [Windows](https://www.wikihow.com/Partition-an-SD-Card#Windows_sub) 
+    - [Linux](https://askubuntu.com/questions/240f497/partitioning-sd-card) 
+    - [MacOs](https://www.wikihow.com/Partition-an-SD-Card#Mac-OS-X_sub)
 
 
 
 ### Decrypting the Data
-
-All data recorded with the BabyLogger are encrypted for data protection. If the logger is lost, nobody except for the registered user will be able to decrypt the data. For that reason, do not share the downloaded software as well as the security key.
+All data recorded with the BabyLogger are encrypted for data protection. If the logger is lost, nobody except for the registered user will be able to decrypt the data. For that reason, do not share the downloaded software as well as the security key folder.
+This is a [Tutorial](/), to explain how to decrypt data on MacOs, the same process can be follow on the other OS.
 <!--more-->
-#### Key management
-- If you haven't already downloaded your keys during the 'Environment installation' process, you should go [here](http://coml.lscp.ens.fr/babylogger/). Enter the **username** and the **code** provided in the email to download **Key** folder with all the keys associated with your loggers. Then copy that 'Key' folder into the 'BabyLogger' folder.
+
+**<p style="color:red">NOTE:</p>**
+    please make sure your computer has the proper protection (antivirus, hard drive encryption, password logins). It is going to contain unencrypted sensitive personal data collected in families; you are responsible for the proper protection of this data.
+ 
+#### Download the BabyLogger software
+   - Download the BabyLogger's Software Package corresponding to your computer's operating system from the link that you received on the email.
+     -  [Linux](/Linux_babylogger_decrypt.zip) .
+     -  [MacOs](MacOS_babylogger_decrypt.zip) .
+     -  [Windows](Windows_babylogger_decrypt.zip). 
+   - Enter the passcode given on the email  to unzip the folder OSname_babylogger_decrypt.
+ . This step will create a **BabyLogger** folder.
+   - Inside the folder, there is an executable file to launch the decryption software(babylogger_OSname) and three subfolders: 
+     - **Raw_Data :** which contains temporary files for transfer.
+     - **Decrypted_Data:** which contains decrypted data.
+     - **Key:** which contains the keys associated with your loggers. **DON'T EVER CHANGE THE KEY FOLDER CONTENT**
   
-**IMPORTANT: you should not attempt to modify or remove anything in the 'Key' folder. If you encounter any problem, re-download the keys and make sure that you are using the correct set of loggers (you can find the logger's ID in the accelerometer files).**
 
 #### How to decrypt the BabyLogger data?
-You must decrypt all data from one logger first and finish the process before decrypting other files. Otherwise, you will overwrite the raw files from the current logger because currently, all raw files share the same names regardless of the logger used) .
+Once you start transferring data from the MicroSD, all the data needs to be transferred and then deleted (otherwise the logger could be confused and overwrite the remaining data when it is in recording mode again).
 
  1. Launch the decryption process by choosing one of these 2 options:
-  - A) Double-click on the 'decrypt app' icon (if you encounter any problem, see the FAQ section).
-  - B) Open a terminal `Ctrl+Alt+T`
-       - Go to the path of the installed 'BabyLogger' folder.
-       - Type the following command: `./decrypt`
-
- 2. The decryptiion process will save the audio (wavs) and accelerometer data in the **Decrypt_Data** folder.
+  - A) Double-click on the **babylogger_OSname** app icon to launch the decryption process.
+  
+  - B) If you have a problem on double click app, navigate to the **Osname_babylogger_decrypt** folder according to your OS and run the following command: **./babylogger_OSname** .
+   - **example**:
+  
+    if you use MacOS, navigateto the  *MacOS_babylogger_decrypt* folder and tape ./babylogger_MacOS on the terminal.
+  *(if you encounter any problem, see the FAQ section)*.
+  
+ 2. The decrypting process creates the audio (.wav) and accelerometer files in the “Decrypt_Data” folder; the files are now ready to be copied for backing up. Each file has now a unique name (LoggerID and date).
  3. You can then copy them for backup or move them for further processing. The files have now a unique name (associated with the logger ID and date).
  4. Delete all remaining files in the **Raw_data** folder.
- 5. Delete all files from both partitions of the MicroSD card.
-
-**NOTE: All data must be transferred from the MicroSD, processed and then deleted before the logger is in recording mode again.**
+ 5. Delete all files from both partitions of the MicroSD.
 
 
+<span style="color:red">**WARNING:** </span>.
+
+
+ Be careful, if using more than one logger, transfer and decrypt the first logger’s raw files before transferring the second logger’s raw files. All loggers use the same file name pattern, therefore you will overwrite the first logger’s raw files if they are not decrypted before transferring files from the second logger.
 #### The decrypted files
 The decrypted files can be found in the **Decrypt_Data** folder. You will find three types of files :
 
- 1. **Audio files** (XX-Audio.wav): the audio files were recorded with a frequency of 16kz, 16bits and 4 channels. their duration is no longer than 30mins long.
+ 1. **Audio files** (XX-Audio.wav): audio files recorded with frequency of 16kz, 16 bits and 4 channels. their duration is no longer than 30mins long.
     - Audio file example: `0002-20200115-20_40_07-Audio.wav`
- 2. **Actimetry files**  (XX-Acti.txt):
+ 2. **Actimetry files**  (XX-Acti.txt): it has the  Accelerometer and Gyroscope informations. 
     - Actimetry file example: `0002-20200115-20_40_07-Acti.txt`
- 3. **Meta data files** (XX-Data.txt):
-    - Meta data file example: `Actimetry file example: 0002-20200115-20_40_07-Data.txt`
+ 3. **Meta data files** (XX-Data.txt):recording information (e.g., number buffers, times stamps...)
+    - Meta data file example: `0002-20200115-20_40_07-Data.txt`
