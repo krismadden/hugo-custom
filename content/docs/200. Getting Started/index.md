@@ -31,14 +31,10 @@ A phone application has been developed to allow you to synchronize the date and 
 Watch this [video](/), for the process
 
 
-### Environment Installation
-
-This section allows the user to set up the environment for the BabyLogger to work in the best way.
-
 
 ### SD Card
 
-####  How to format the SD card?
+####  Formatting the SD card
 With 64 GO SD card, Create two partitions with the first one containing 95% of the memory area and the second one 5%. The card should be formatted in the NTFS File System, and the partitions should be created in a fixed order (audio first, accelerometer second). The table below gives the names and sizes of the partitions that should be created according to your SD card size.
 
 
@@ -48,7 +44,7 @@ Partition| Name of partition| partition_size | partition_type| size_unity_alloca
 Partition 1 | BL_AUDIO|60.8GB |EXFAT| 64Ko 
 Partition 2 | BL_MOTION |3.2GB |FAT32| 32Ko 
 
-#### How to create a partition on a new SD card?
+#### Creating a partition on a new SD card
 - You can follow this [tutorial](https://www.youtube.com/watch?v=OZVFvBzQRbs&feature=youtu.be) that we made on windows and it can help you.
  
 
